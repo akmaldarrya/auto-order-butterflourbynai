@@ -1,84 +1,46 @@
+import { useState } from "react";
+
 function App() {
+    const [name, setName] = useState ('');
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleWhatsAppMessage = (event) => {
+        event.preventDefault();
+
+        // masukan tujuan nomor target
+        const targetNumber = '6288298647044';
+
+        const encodedMessage = encodeURIComponent(`AKU BUTTERLOVE MAU ORDER DONGGGGGGGG... \nAKU MAU PESEN KAKKKK..\nPLISS AKU BM PRODUK KAKA BANGETTTTTT..`);
+
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetNumber}&text=${encodedMessage}`;
+
+        window.open(whatsappUrl, '_blank');
+    }
+
     return (
         <div className="h-screen flex p-2">
             <div className="p-1 flex justify-around items-center w-full font-poppins ">
-                <div className="bg-[#625aff] h-full w-[20rem] rounded-md flex justify-center items-start">
-                    <div className="p-2 my-10 w-[12rem] flex flex-col gap-7">
-                        <div className="flex justify-start items-center gap-5">
-                            <div className="font-semibold bg-[#bce0fb] justify-center items-center w-8 rounded-full p-1 flex">
-                                <p>1</p>
-                            </div>
-                            <div className="text-white">
-                                <p className="text-xs">STEP 1</p>
-                                <p className="font-semibold">YOUR INFO</p>
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center gap-5">
-                            <div className="font-semibold border text-white justify-center items-center w-8 rounded-full p-1 flex">
-                                <p>2</p>
-                            </div>
-                            <div className="text-white">
-                                <p className="text-xs">STEP 2</p>
-                                <p className="font-semibold">SELECT PLAN</p>
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center gap-5">
-                            <div className="font-semibold border text-white justify-center items-center w-8 rounded-full p-1 flex">
-                                <p>3</p>
-                            </div>
-                            <div className="text-white">
-                                <p className="text-xs">STEP 3</p>
-                                <p className="font-semibold">ADD-ONS</p>
-                            </div>
-                        </div>
-                        <div className="flex justify-start items-center gap-5">
-                            <div className="font-semibold border text-white justify-center items-center w-8 rounded-full p-1 flex">
-                                <p>4</p>
-                            </div>
-                            <div className="text-white">
-                                <p className="text-xs">STEP 4</p>
-                                <p className="font-semibold">SUMMARY</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div className="w-full ml-1 h-full flex flex-col items-center">
                     <div className="p-5 w-[85%] flex flex-col gap-5 h-full">
                         <div className="flex flex-col">
-                            <div className="text-[3rem] text-[#072852] font-bold">
-                                <p>Personal Info</p>
+                            <div className="text-[2rem] text-[#072852] font-bold">
+                                <p>Butterflourbynai</p>
                             </div>
                             <div className="text-sm font-semibold opacity-30">
-                                Please provide your name, email address, and phone number.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor culpa repellat voluptates animi quas voluptatem eaque esse nesciunt, atque incidunt!
                             </div>
                         </div>
-                        <div className="flex flex-col gap-6">
-                            <div className="flex flex-col gap-3">
-                                <div className="text-sm font-semibold text-[#072852]">
-                                    <p>Name</p>
-                                </div>
-                                <input type="text" className="p-2 border-2 rounded-md focus:outline-none" placeholder="e.g. Stephen King" />
+                        <form action="" onSubmit={handleWhatsAppMessage} className="relative flex flex-col">
+                            <div className="arrow-down w-[8rem] justify-center flex -top-10">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 animate-bounce text-[#072852]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                </svg>
                             </div>
-                            <div className="flex flex-col gap-3">
-                                <div className="text-sm font-semibold text-[#072852]">
-                                    <p>Email Address</p>
-                                </div>
-                                <input type="text" className="p-2 border-2 rounded-md focus:outline-none" placeholder="e.g. Stephen King" />
-                            </div>
-                            <div className="flex flex-col gap-3">
-                                <div className="text-sm font-semibold text-[#072852]">
-                                    <p>Phone Number</p>
-                                </div>
-                                <input type="text" className="p-2 border-2 rounded-md focus:outline-none" placeholder="e.g. Stephen King" />
-                            </div>
-                        </div>
-                        <div className="flex justify-end h-full w-full mt-5">
-                            <div className="items-end flex">
-                                <button className="bg-[#072852] p-2 rounded-lg w-[7rem] text-white font-semibold hover:scale-110 transition duration-300 ease-in-out">
-                                    Next Step
-                                </button>
-                            </div>
-                        </div>
+                            <button className="p-2 bg-[#072852] text-white rounded-md w-[8rem] hover:w-[15rem] transition-all duration-300 ease-in-out">
+                                Order Now
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
