@@ -1,5 +1,5 @@
 function App() {
-    const handleWhatsAppMessage = (event) => {
+    const handleWhatsAppMessage = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         // masukan tujuan nomor target
@@ -25,13 +25,13 @@ function App() {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor culpa repellat voluptates animi quas voluptatem eaque esse nesciunt, atque incidunt!
                             </div>
                         </div>
-                        <form action="" onSubmit={handleWhatsAppMessage} className="relative flex flex-col">
+                        <form onSubmit={handleWhatsAppMessage} className="relative flex flex-col">
                             <div className="arrow-down w-[8rem] justify-center flex -top-10">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 animate-bounce text-[#072852]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </div>
-                            <button className="p-2 bg-[#072852] text-white rounded-md w-[8rem] hover:w-[15rem] transition-all duration-300 ease-in-out">
+                            <button type="submit" className="p-2 bg-[#072852] text-white rounded-md w-[8rem] hover:w-[15rem] transition-all duration-300 ease-in-out">
                                 Order Now
                             </button>
                         </form>
