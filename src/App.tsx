@@ -5,11 +5,11 @@ function App() {
         // masukan tujuan nomor target
         const targetNumber = '6288298647044';
 
-        const encodedMessage = encodeURIComponent(`AKU BUTTERLOVE MAU ORDER DONGGGGGGGG... \nAKU MAU PESEN KAKKKK..\nPLISS AKU BM PRODUK KAKA BANGETTTTTT..`);
+        const encodedMessage = encodeURIComponent(`AKU BUTTERLOVE MAU ORDER DONGGGGGGG... \nAKU MAU PESEN KAKKKK..\nPLISS AKU BM PRODUK KAKA BANGETTTTTT..`);
 
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${targetNumber}&text=${encodedMessage}`;
 
-        window.open(whatsappUrl, '_blank');
+        window.open(whatsappUrl);
     }
 
     return (
